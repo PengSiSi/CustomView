@@ -30,8 +30,9 @@ static NSString *const identifyCellId = @"cell";
 
 - (void)initData {
 
-    self.dataArray = @[@"1:自定义segement"];
-    self.pushControllerVcArray = @[@"CustomSegmentViewController"];
+    self.dataArray = @[@"1:自定义segement",
+                       @"2:自定义TextView"];
+    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController"];
 }
 
 #pragma mark - 设置界面
@@ -70,12 +71,9 @@ static NSString *const identifyCellId = @"cell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 0) {
         
         id pushVc = [[NSClassFromString(self.pushControllerVcArray[indexPath.row]) alloc]init];
-        [self.navigationController pushViewController:pushVc animated:YES];
-    }
+    [self.navigationController pushViewController:pushVc animated:YES];
 }
 
 #pragma mark - 懒加载

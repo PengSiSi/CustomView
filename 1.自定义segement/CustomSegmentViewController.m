@@ -18,11 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"自定义segement";
-    
     PSSegmentView *segement = [[PSSegmentView alloc]initWithItemTitles:@[@"热门",@"我的"]];
     segement.frame = CGRectMake(50, 100, 150, 44);
     [segement clickDefault];
     [self.view addSubview:segement];
+    segement.block = ^(PSSegmentView *segement, NSString *currentTitle, NSInteger currentIndex) {
+        
+        NSLog(@"点击了%@",currentTitle);
+    };
 }
 
 @end

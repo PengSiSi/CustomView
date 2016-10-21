@@ -9,7 +9,7 @@
 #import "PSSegmentView.h"
 #import "UIView+Layer.h"
 
-#define kCommonTintColor [UIColor colorWithRed:0.42f green:0.33f blue:0.27f alpha:1.00f] 
+#define kCommonBgColor [UIColor colorWithRed:0.86f green:0.85f blue:0.80f alpha:1.00f]
 
 @implementation PSSegmentView {
     
@@ -22,7 +22,7 @@
     if (self = [super init]) {
         _itemTitles = itemTitles;
         self.layerCornerRadius = 3.0;
-        self.layerBorderColor = kCommonTintColor;
+        self.layerBorderColor = [UIColor blackColor];
         self.layerBorderWidth = 1.0;
         [self setUpViews];
     }
@@ -44,14 +44,12 @@
         for (id obj in _itemTitles) {
             if ([obj isKindOfClass:[NSString class]]) {
                 NSString *objStr = (NSString *)obj;
-                // 创建button
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 [self addSubview:btn];
-                btn.backgroundColor = kCommonTintColor;
+                btn.backgroundColor = kCommonBgColor;
                 [btn setTitle:objStr forState:UIControlStateNormal];
-                [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-                btn.titleLabel.font = [UIFont systemFontOfSize:16];
+                [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+                [btn setTitleColor:[UIColor colorWithRed:0.42f green:0.33f blue:0.27f alpha:1.00f] forState:UIControlStateNormal];                btn.titleLabel.font = [UIFont systemFontOfSize:16];
                 i = i + 1;
                 btn.tag = i;
                 [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -62,16 +60,18 @@
     }
 }
 
-- (void)buttonClick: (UIButton *)button {
+- (void)buttonClick: (UIButton *)btn {
     
-    _selectedBtn.backgroundColor = kCommonTintColor;
-    button.backgroundColor = [UIColor colorWithRed:0.42f green:0.33f blue:0.27f alpha:1.00f];
+    _selectedBtn.backgroundColor = kCommonBgColor;
+    btn.backgroundColor = [UIColor colorWithRed:0.42f green:0.33f blue:0.27f alpha:1.00f];
+    
     _selectedBtn.selected = NO;
-    button.selected = YES;
-    _selectedBtn = button;
-    NSString *title = button.currentTitle;
+    btn.selected = YES;
+    _selectedBtn = btn;
+    
+    NSString *title = btn.currentTitle;
     if (self.block) {
-        self.block(self, title, button.tag - 1);
+        self.block(self, title, btn.tag - 1);
     }
 }
 
