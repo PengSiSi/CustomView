@@ -33,8 +33,9 @@ static NSString *const identifyCellId = @"cell";
     self.dataArray = @[@"1:自定义segement",
                        @"2:自定义TextView",
                        @"3:自定义无网络显示视图",
-                       @"4.自定义图片在上,文字在下按钮"];
-    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController",@"CustomNoNetworkEmptyViewController",@"CustomButtonViewController"];
+                       @"4:自定义图片在上,文字在下按钮",
+                       @"5:自定义UIAlertViewController"];
+    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController",@"CustomNoNetworkEmptyViewController",@"CustomButtonViewController",@"CustomAlertViewController"];
 }
 
 #pragma mark - 设置界面
