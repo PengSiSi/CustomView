@@ -4,7 +4,8 @@
 //
 //  Created by 思 彭 on 16/10/20.
 //  Copyright © 2016年 思 彭. All rights reserved.
-//
+
+// 自定义带palceHolder的textView
 
 #import <UIKit/UIKit.h>
 @class PSCustomPlaceHolderTextView;

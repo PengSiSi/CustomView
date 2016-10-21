@@ -31,8 +31,9 @@ static NSString *const identifyCellId = @"cell";
 - (void)initData {
 
     self.dataArray = @[@"1:自定义segement",
-                       @"2:自定义TextView"];
-    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController"];
+                       @"2:自定义TextView",
+                       @"3:自定义无网络显示视图"];
+    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController",@"CustomNoNetworkEmptyViewController"];
 }
 
 #pragma mark - 设置界面
