@@ -35,8 +35,9 @@ static NSString *const identifyCellId = @"cell";
                        @"3:自定义无网络显示视图",
                        @"4:自定义图片在上,文字在下按钮",
                        @"5:自定义UIAlertViewController",
-                       @"6:自定义弹窗视图"];
-    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController",@"CustomNoNetworkEmptyViewController",@"CustomButtonViewController",@"CustomAlertViewController",@"CustomAlertShowVC"];
+                       @"6:自定义弹窗视图",
+                       @"7:倒计时Label"];
+    self.pushControllerVcArray = @[@"CustomSegmentViewController", @"CustomTextViewViewController",@"CustomNoNetworkEmptyViewController",@"CustomButtonViewController",@"CustomAlertViewController",@"CustomAlertShowVC",@"CustomCountDownVC"];
 }
 
 #pragma mark - 设置界面
